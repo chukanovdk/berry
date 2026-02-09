@@ -71,7 +71,7 @@
     "typescript": "^5.9.2",
     "unist-util-visit-parents": "^6.0.1",
     "usehooks-ts": "^3.1.1",
-    "webpack": "^5.88.2"
+    "webpack": "^5.104.1"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0",
