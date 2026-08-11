@@ -71,6 +71,8 @@ jobs:
         ./scripts/release/03-release-npm.sh
 
     - name: 'Updates the stableVersion field'
+      env:
+        BRANCH: ${{github.event.inputs.branch}}
       run: |
         # Revert the change from "Build a binary for convenience"
         git update-index --no-skip-worktree -- .yarnrc.yml
@@ -86,5 +88,5 @@ jobs:
         git reset --soft $HEAD_COMMIT
         git checkout $RELEASE_COMMIT -- packages/*/bin/**
         git add .
-        git commit -m 'Sync master with the changes from ${{github.event.inputs.branch}}'
+        git commit -m "Sync master with the changes from $BRANCH"
         git push
